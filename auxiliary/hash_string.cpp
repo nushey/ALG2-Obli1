@@ -15,4 +15,5 @@ class HashString : public HashFunc<string>{
             }
             return res;
         }
+        
 };

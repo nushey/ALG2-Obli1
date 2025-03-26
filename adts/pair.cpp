@@ -1,6 +1,5 @@
-#include <stdio.h>
+#pragma once
 
-using namespace std;
 
 template<class T1, class T2>
 struct Pair{
