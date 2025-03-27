@@ -70,8 +70,13 @@ class OpenMap : public Map<K,V>
         virtual void remove(K key) override{
             int pos = abs(this->h->hash(key) % this->length);
             if(this->arr[pos] == nullptr) return;
+            int preSize = this->arr[pos]->size();
             this->arr[pos]->remove(Pair<K,V>(key,key));
-            this->count--;
+            if (preSize != this->arr[pos]->size())
+            {
+                this->count--;
+            }
+
         }
         virtual int capacity() override{
             return this->length;

@@ -12,15 +12,11 @@ int main(){
     HashFunc<string> *h = new HashString();
     Map<string,string>* om = new OpenMap<string,string>(h, n);
 
-    int unique = 0;
     for(int i = 0; i < n; i++){
         string str;
         cin >> str;
-        if(!om->exists(str)){
-            unique++;
-            om->set(str,str);
-        }
+        om->set(str,str);
     }
-    cout << unique << "\n";
+    cout << om->size()<< "\n";
     return 0;
 }
