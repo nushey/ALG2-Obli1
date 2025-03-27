@@ -2,5 +2,6 @@
 
 template <class T>
 class HashFunc{
-    virtual int hash (T data) = 0;
+    public:
+        virtual int hash (T data) = 0;
 };

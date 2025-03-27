@@ -16,7 +16,7 @@ struct Pair{
     }
 
     bool operator==(const Pair<T1,T2> &other) {
-        return this->fst == other->fst;
+        return this->fst == other.fst;
     }
 
 };
