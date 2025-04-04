@@ -5,6 +5,7 @@ using namespace std;
 
 class HashString : public HashFunc<string>{
     public:
+        // polynomial rolling hash
         virtual int hash(string key) override {
             const int p = 31; 
             long long p_pow = 1;
