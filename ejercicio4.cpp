@@ -41,6 +41,9 @@ void dijkstra(Graph*& graph, int origin, int edges, int*& costs){
 
 int main(){
 
+    ios::sync_with_stdio(false);
+    cout.tie(0);
+    cin.tie(0);
     int v,e;
     cin >> v >> e;
     int* costs = new int[v+1];
@@ -60,7 +63,7 @@ int main(){
         costs[vertex] = -1; // Output 
 
         for(int j = 1; j <= v; j++){
-            cout << costs[j] << endl;
+            cout << costs[j] << "\n";
         }
     }
 

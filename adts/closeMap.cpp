@@ -69,7 +69,7 @@ class ClosedMap : public Map<K,V>{
 
     public:
         ClosedMap(HashFunc<K> *h1, HashFunc<K> *h2, int expectedSize){
-            this->length = nextPrime(expectedSize);
+            this->length = nextPrime(expectedSize*3/2);
             this->arr = new Entry[this->length];
             for(int i = 0; i < this->length; i++){
                 this->arr[i].isDeleted = false;
@@ -101,7 +101,6 @@ class ClosedMap : public Map<K,V>{
         }
 
         virtual void set(K key, V val) override{
-            if(this->count > 0.8 * this->length) rehash();
             this->remove(key);
             int hash1 = ABS(this->h1->hash(key)) % this->length;
             int hash2 = ABS(this->h2->hash(key)) % this->length;

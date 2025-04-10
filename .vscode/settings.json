@@ -3,6 +3,7 @@
         "ostream": "cpp",
         "ranges": "cpp",
         "bitset": "cpp",
-        "format": "cpp"
+        "format": "cpp",
+        "iosfwd": "cpp"
     }
 }

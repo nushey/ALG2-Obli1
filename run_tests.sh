@@ -29,16 +29,23 @@ for i in {1..5}; do
         expected_out="${test_dir}/${prefix}.out.txt"
         actual_out="tmp_${prefix}.out"
 
+        # Tomamos tiempo antes
+        start_time=$(date +%s.%N)
+        
+        # Ejecutamos el programa
         "$exec" < "$infile" > "$actual_out" 2>/dev/null
 
+        # Tomamos tiempo después
+        end_time=$(date +%s.%N)
 
-        # Comparación robusta ignorando espacios, líneas vacías, y diferencias de CRLF
-        if diff -wB "$expected_out" "$actual_out" > /dev/null; then
-            echo -e "${GREEN}✔ Test $prefix passed.${NC}"
+        # Calculamos duración en segundos
+        elapsed_sec=$(awk "BEGIN {printf \"%.3f\", $end_time - $start_time}")
+
+        # Comparación robusta
+        if diff -wB --strip-trailing-cr "$expected_out" "$actual_out" > /dev/null; then
+            echo -e "${GREEN}✔ Test $prefix passed${NC} (${elapsed_sec}s)"
         else
-            echo -e "${RED}✘ Test $prefix failed.${NC}"
-            echo "  Diferencias:"
-            diff -u --strip-trailing-cr "$expected_out" "$actual_out"
+            echo -e "${RED}✘ Test $prefix failed${NC} (${elapsed_sec}s)"
         fi
 
         rm "$actual_out"

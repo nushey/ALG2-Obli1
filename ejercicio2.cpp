@@ -8,6 +8,10 @@ using namespace std;
 
 int main(){
 
+    ios::sync_with_stdio(false);
+    cout.tie(0);
+    cin.tie(0);
+
     int n,m;
     cin >> n;
     HashFunc<string> *h1 = new HashString();
@@ -23,13 +27,8 @@ int main(){
     for(int i = 0; i < m; i++){
         string str;
         cin >> str;
-        cout << om->exists(str) << endl;
+        cout << om->exists(str) << "\n";
     }
-
-    delete om;
-    delete h1;
-    delete h2;
-
 
 
     return 0;
