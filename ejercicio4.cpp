@@ -67,5 +67,8 @@ int main(){
         }
     }
 
+    delete[] costs;
+    delete graph;
+
     return 0;
 }

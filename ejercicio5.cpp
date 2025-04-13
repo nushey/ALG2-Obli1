@@ -42,7 +42,7 @@ int main(){
     cin >> v >> e;
     Graph* graph = new ListGraph(v);
     Check* visited = new Check[v+1];
-    for(int i = 0; i < v; i++){
+    for(int i = 1; i <= v; i++){
         visited[i] = UNVISITED;
     }
 
@@ -60,7 +60,7 @@ int main(){
 
     cout << ans << "\n";
 
-
+    delete[] visited;
 
     return 0;
 }

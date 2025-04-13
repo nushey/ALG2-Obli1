@@ -30,6 +30,10 @@ int main(){
         cout << om->exists(str) << "\n";
     }
 
+    delete h1;
+    delete h2;
+    delete om;
+
 
     return 0;
 }

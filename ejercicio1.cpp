@@ -21,5 +21,8 @@ int main(){
         om->set(str,str);
     }
     cout << om->size()<< "\n";
+
+    delete h;
+    delete om;
     return 0;
 }
