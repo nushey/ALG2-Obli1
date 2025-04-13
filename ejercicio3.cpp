@@ -6,9 +6,9 @@ using namespace std;
 
 int main(){
 
-    ios::sync_with_stdio(false); // sin esto demoraba 70s en vez de 10s
-    cin.tie(0); // sin esto demoraba 70s en vez de 10s
-    cout.tie(0); // sin esto demoraba 70s en vez de 10s
+    ios::sync_with_stdio(false); 
+    cin.tie(0); 
+    cout.tie(0); 
     int* arr;
     int n;
     cin >> n;
