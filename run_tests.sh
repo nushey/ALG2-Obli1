@@ -4,7 +4,7 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m'
 
-for i in {9..9}; do
+for i in {10..10}; do
     exec="./ejercicio${i}.exe"
     test_dir="tests/ejercicio${i}"
 
