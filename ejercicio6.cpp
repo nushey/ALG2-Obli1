@@ -181,7 +181,8 @@ vector<Point> concat(vector<Point> &a, vector<Point> &b)
     {
         if (i == 0 || ans[i].y != ans[i - 1].y)
         {
-            cleanAns.push(ans[i]);
+            if (!(ans[i].x == 0 && ans[i].y == 0))
+                cleanAns.push(ans[i]);
         }
     }
     return cleanAns;
@@ -192,7 +193,8 @@ vector<Point> solve(int n, Figure *arr, int l, int r)
     if (r == l)
     {
         vector<Point> result;
-        result.push({arr[l].x, arr[l].h});
+        if (!(arr[l].x == 0 && arr[l].h == 0))
+            result.push({arr[l].x, arr[l].h});
         result.push({arr[l].y, 0});
         return result;
     }
