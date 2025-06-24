@@ -22,6 +22,9 @@ private:
 
 public:
     Vector() : data(nullptr), capacity(0), count(0) {}
+    // Constructor with size parameter
+    Vector(size_t initialCapacity) : data(new T[initialCapacity]), capacity(initialCapacity), count(0) {}
+
     void push(const T &value)
     {
         if (count == capacity)
@@ -42,7 +45,7 @@ public:
 
     T &operator[](size_t index)
     {
-        if (index >= count)
+        if (index >= capacity)
         {
             throw std::out_of_range("Index out of range");
         }
